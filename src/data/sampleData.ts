@@ -1,0 +1,170 @@
+import { Student, ItinerantLog, IEPGoal } from '../types';
+
+export const INITIAL_STUDENTS: Student[] = [
+  {
+    id: 'stu-1',
+    name: '김민준',
+    schoolName: '햇살초등학교',
+    gradeClass: '초등 3학년 (특수학급)',
+    category: '지적장애',
+    teacherInCharge: '박특수 교사',
+  },
+  {
+    id: 'stu-2',
+    name: '이서연',
+    schoolName: '나래중학교',
+    gradeClass: '중학 1학년 (통합학급)',
+    category: '자폐성장애',
+    teacherInCharge: '박특수 교사',
+  },
+  {
+    id: 'stu-3',
+    name: '박지훈',
+    schoolName: '푸른초등학교',
+    gradeClass: '초등 5학년 (순회교육)',
+    category: '발달지체/언어발달',
+    teacherInCharge: '박특수 교사',
+  },
+];
+
+export const INITIAL_LOGS: ItinerantLog[] = [
+  {
+    id: 'log-101',
+    date: '2026-07-28',
+    schoolName: '햇살초등학교',
+    studentName: '김민준',
+    gradeClass: '초등 3학년',
+    startTime: '09:50',
+    endTime: '10:30',
+    period: '2교시',
+    domain: '국어 / 의사소통',
+    content:
+      '낱말 카드 맞추기 및 실생활 그림책 읽기 지도.\n1. 그림 카드를 보고 해당 글자 낱말(바나나, 사과, 버스)을 찾아 소리 내어 정확히 읽음.\n2. 교사의 구두 시범을 듣고 2음절 단어를 정확하게 모사하여 받아쓰기 3문항 수행.\n3. 스스로 단어 완성 시 강한 보상 반응(음악 듣기)을 유도하여 집중 시간 15분 유지함.',
+    remarks: '활동 초기 산만함이 관찰되었으나 시각적 스케줄표 제공 후 높은 자발적 참여도를 보임.',
+    approvalPersons: {
+      teacher: '박특수',
+      teamLeader: '이순회',
+      director: '김지원',
+    },
+    createdAt: new Date('2026-07-28T10:35:00').toISOString(),
+  },
+  {
+    id: 'log-102',
+    date: '2026-07-21',
+    schoolName: '햇살초등학교',
+    studentName: '김민준',
+    gradeClass: '초등 3학년',
+    startTime: '09:50',
+    endTime: '10:30',
+    period: '2교시',
+    domain: '수학 / 자립생활',
+    content:
+      '화폐 가치 이해 및 화폐 단위 구별 지도.\n1. 1,000원, 5,000원, 10,000원 지폐의 색상과 숫자를 보고 상호 구별함.\n2. 학급 내 모의 가게에서 1,000원짜리 물건(공책)을 사고 지폐를 교사에게 지불하는 연습 진행.\n3. 물건 가격표에 적힌 숫자와 지폐의 숫자를 1:1 매칭함.',
+    remarks: '5,000원 지폐와 10,000원 지폐의 단위 혼동이 일부 있어 다음 차시 반복 지도 필요.',
+    approvalPersons: {
+      teacher: '박특수',
+      teamLeader: '이순회',
+      director: '김지원',
+    },
+    createdAt: new Date('2026-07-21T10:35:00').toISOString(),
+  },
+  {
+    id: 'log-103',
+    date: '2026-07-25',
+    schoolName: '나래중학교',
+    studentName: '이서연',
+    gradeClass: '중학 1학년',
+    startTime: '11:00',
+    endTime: '11:45',
+    period: '3교시',
+    domain: '사회성 / 행동지원',
+    content:
+      '또래 관계 및 자기표현 표현 신체 신호 이해 지도.\n1. 감정 상태 카드(기쁨, 화남, 피곤함)를 보고 자신의 현 감정을 교사에게 말로 표현함.\n2. 또래 친구와의 대화 시 상대방의 눈을 3초 이상 바라보며 "고마워", "미안해" 인사하기 역할극 수행.\n3. 감정이 격해졌을 때 "잠시 쉴게요" 쉼 카드 제시하기 자율 연습.',
+    remarks: '역할극 중 수줍어하는 모습을 보였으나 교사의 촉진 시 시선 맞추기 성공함.',
+    approvalPersons: {
+      teacher: '박특수',
+      teamLeader: '이순회',
+      director: '김지원',
+    },
+    createdAt: new Date('2026-07-25T11:50:00').toISOString(),
+  },
+  {
+    id: 'log-104',
+    date: '2026-07-18',
+    schoolName: '푸른초등학교',
+    studentName: '박지훈',
+    gradeClass: '초등 5학년',
+    startTime: '13:30',
+    endTime: '14:10',
+    period: '5교시',
+    domain: '신체 / 소근육발달',
+    content:
+      '손가락 근력 및 세심 조작 활동 지도.\n1. 보조도구를 활용한 가위질 선 따라 오리기 활동(직선 및 곡선 오리기).\n2. 클레이를 활용하여 동그라미 경단 만들기 및 핀셋으로 콩 집어 옮기기 10회 수행.\n3. 연필 잡기 보조 교구를 착용하고 자신의 이름 글자 받아 적기.',
+    remarks: '소근육 피로 시 가벼운 손 스트레칭을 병행하여 집중도를 개선함.',
+    approvalPersons: {
+      teacher: '박특수',
+      teamLeader: '이순회',
+      director: '김지원',
+    },
+    createdAt: new Date('2026-07-18T14:15:00').toISOString(),
+  },
+];
+
+export const INITIAL_IEP_GOALS: IEPGoal[] = [
+  {
+    id: 'iep-201',
+    studentName: '김민준',
+    schoolName: '햇살초등학교',
+    academicYear: '2026학년도',
+    semester: '1학기',
+    domain: '국어 / 의사소통',
+    longTermGoal: '기초 낱말의 뜻을 이해하고 2~3음절 낱말을 스스로 정확히 읽고 쓸 수 있다.',
+    monthlyGoals: [
+      { month: '3월', goal: '그림 카드를 보고 해당 단어 낱말 카드를 80% 이상 정확히 매칭하기' },
+      { month: '4월', goal: '2음절 기초 단어(사과, 버스 등)를 소리 내어 읽고 뜻 이해하기' },
+      { month: '5월', goal: '교사의 음성 시범을 듣고 2음절 단어를 정확히 받아쓰기' },
+      { month: '6월', goal: '생활 주변 그림책에서 배운 낱말 5개 이상 찾아 동그라미 치기' },
+      { month: '7월', goal: '자신의 이름과 친숙한 낱말을 정자체로 바르게 받아쓰기' },
+    ],
+    evaluationText:
+      '김민준 학생은 시각적 보조 자료와 낱말 카드를 활용한 지도 시, 2음절 낱말을 소리 내어 읽고 80% 이상의 높은 정확도로 구별할 수 있게 되었음. 모의 가게 활동을 통해 지폐 가치를 비교하며 실생활 적응력이 크게 향상되었음. 다만 복잡한 단어 받아쓰기 시 촉진이 일부 필요하여 2학기에도 반복적 어휘 확장 지도가 요구됨.',
+    updatedAt: new Date('2026-07-28T12:00:00').toISOString(),
+  },
+  {
+    id: 'iep-202',
+    studentName: '이서연',
+    schoolName: '나래중학교',
+    academicYear: '2026학년도',
+    semester: '1학기',
+    domain: '사회성 / 행동지원',
+    longTermGoal: '상대방과의 대화 시 시선을 맞추고 자신의 감정 상태를 적절한 언어로 표현할 수 있다.',
+    monthlyGoals: [
+      { month: '3월', goal: '자신의 감정 상태(기쁨, 화남, 불안 등)를 감정 카드로 선택하여 말하기' },
+      { month: '4월', goal: '또래 교류 상황에서 3초 이상 상대방의 눈을 바라보며 상황 인사 건네기' },
+      { month: '5월', goal: '부정적 감정 발생 시 "쉬고 싶어요" 쉼 카드를 자발적으로 제시하기' },
+      { month: '6월', goal: '학급 내 소모임 활동에서 순서를 지키며 자기 의견 말하기' },
+      { month: '7월', goal: '상대방의 말을 경청하고 감사함과 사과의 표현을 언어로 전달하기' },
+    ],
+    evaluationText:
+      '이서연 학생은 역할극 및 감정 카드를 활용한 대인관계 지도 시, 자신의 정서 상태를 적극적으로 표현하는 변화를 보였음. 또래와의 대화에서 교사의 언어적 촉진 시 시선 맞추기를 3초 이상 수행하며 타인에 대한 관심도가 증대되었음. 향후 통합학급 내 실전 대화 적용 훈련이 지속 필요함.',
+    updatedAt: new Date('2026-07-25T14:00:00').toISOString(),
+  },
+  {
+    id: 'iep-203',
+    studentName: '박지훈',
+    schoolName: '푸른초등학교',
+    academicYear: '2026학년도',
+    semester: '1학기',
+    domain: '신체 / 소근육발달',
+    longTermGoal: '소근육 조작 교구를 활용하여 선 따라 오리기 및 기초 글씨 쓰기 동작을 수행할 수 있다.',
+    monthlyGoals: [
+      { month: '3월', goal: '핀셋 및 클레이를 이용한 손가락 집기 조작 활동 수행하기' },
+      { month: '4월', goal: '가위를 활용해 직선 가이드라인을 벗어나지 않고 오리기' },
+      { month: '5월', goal: '가위를 활용해 곡선 가이드라인 선 따라 오리기' },
+      { month: '6월', goal: '연필 보조 교구를 활용하여 선 따라 자음/모음 쓰기' },
+      { month: '7월', goal: '자신의 이름을 연필로 정확한 선을 따라 선명하게 기재하기' },
+    ],
+    evaluationText: '',
+    updatedAt: new Date('2026-07-18T15:00:00').toISOString(),
+  },
+];

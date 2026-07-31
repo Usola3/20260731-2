@@ -1,0 +1,6 @@
+{
+  "name": "순회교육일지 및 IEP AI 관리 시스템",
+  "description": "특수교사를 위한 순회교육일지 작성, A4 결재 서식 인쇄 및 Gemini AI 기반 IEP 평가 문구 추천 시스템",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

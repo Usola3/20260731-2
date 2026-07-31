@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: #faf9ff;
+    color: #334155;
+    font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Noto Sans KR", "Segoe UI", Roboto, sans-serif;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a5b4fc;
+}
+
+/* Print CSS Configurations */
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 8mm 10mm;
+  }
+
+  .print\:hidden {
+    display: none !important;
+  }
+
+  .printable-page {
+    page-break-after: always;
+    page-break-inside: avoid;
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+}
+
+/* Animations */
+@keyframes slideUp {
+  from {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s ease-out forwards;
+}
